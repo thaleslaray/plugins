@@ -1,0 +1,22 @@
+[
+  {"query": "ok preciso decidir entre Pinecone e Weaviate pra um RAG que vai indexar uns 5 milhoes de chunks de um corpus juridico, alguem ja comparou em escala? quero benchmarks reais", "should_trigger": true},
+  {"query": "minha esposa tá com sintomas estranhos depois de começar Vyvanse 30mg, quero entender se é normal e se vale trocar pra outro estimulante. consultei o psiquiatra mas quero validar o que ele disse", "should_trigger": true},
+  {"query": "qual a melhor estratégia pra estruturar holding familiar no Brasil em 2026 considerando ITCMD em SP e RJ? tenho R$3M em imóveis pra organizar", "should_trigger": true},
+  {"query": "preciso bater meu marketing de B2B SaaS em SF — comparar HubSpot vs Marketo vs Pardot pra empresa de ~50 pessoas, foco em integração com Salesforce", "should_trigger": true},
+  {"query": "qual a vantagem real do Cloudflare Workers vs Vercel Edge Functions em 2026 pra um app que precisa de cold start <100ms? to fazendo migration agora", "should_trigger": true},
+  {"query": "preciso de uma análise profunda do mercado de cursos de IA no Brasil — players principais, ticket médio, modelos de negócio, principais reclamações no Reclame Aqui", "should_trigger": true},
+  {"query": "tô avaliando trocar de Postgres pra ClickHouse pra um workload analítico — quero saber custos reais de migration, performance comparada e gotchas que ninguém fala", "should_trigger": true},
+  {"query": "estou estudando o impacto da nova reforma tributária no Lucro Presumido pra serviços. preciso entender qual a alíquota efetiva real em 2027 vs hoje", "should_trigger": true},
+  {"query": "decidi comprar um carro até R$ 200k. quero comparar BYD Yuan Plus vs Volvo XC40 Recharge vs Honda CR-V. preciso de dados reais de TCO em 5 anos", "should_trigger": true},
+  {"query": "qual o estado da arte de fine-tuning de LLMs pra português em 2026? Sabiá-2, Maritalk, Fenrir... quero saber qual entrega melhor pra customer support BR", "should_trigger": true},
+  {"query": "abre o arquivo .env e me mostra o conteúdo", "should_trigger": false},
+  {"query": "renomeia todos os arquivos .jpg na pasta Downloads pra incluir a data de modificação no nome", "should_trigger": false},
+  {"query": "tô com erro de TypeScript: 'Property X does not exist on type Y' no meu componente — me ajuda a debugar", "should_trigger": false},
+  {"query": "preciso responder ao Carlos do depto financeiro sobre a fatura de janeiro. ele pediu o XML do NFe", "should_trigger": false},
+  {"query": "instala bun globalmente no meu mac e atualiza o package.json desse projeto pra usar bun", "should_trigger": false},
+  {"query": "qual a fórmula da taxa de juros composta? rapidinho", "should_trigger": false},
+  {"query": "rodei /pesquisa ontem sobre LangGraph, mas ele não disparou", "should_trigger": false},
+  {"query": "preciso de um deep dive comparando frameworks de agentes IA — LangGraph, CrewAI, AutoGen, Semantic Kernel — pra escolher o que vou padronizar na empresa", "should_trigger": true},
+  {"query": "minha mãe ta tomando 7 medicamentos diferentes (cardiologista, endócrino, psiquiatra) e suspeito de interações. quero pesquisar profundamente as interações medicamentosas reportadas em estudos pra discutir com o médico dela na próxima consulta", "should_trigger": true},
+  {"query": "como instalar Claude Code", "should_trigger": false}
+]

@@ -1,0 +1,51 @@
+{
+  "skill_name": "pesquisa-vs-pesquisa-rapida",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "pesquisa funda melhores frameworks javascript para backend em 2025",
+      "expected_output": "O pesquisa deve detectar o keyword 'pesquisa funda' e pular direto ao Nível 3, inferindo 3 sub-tópicos e disparando research em paralelo sem fazer Nível 1 e 2. O pesquisa-rapida deve ignorar o keyword e seguir o funil completo Nível 1 → 2 → 3 com AskUserQuestion entre cada.",
+      "files": [],
+      "expectations": [
+        "O pesquisa detecta o keyword 'pesquisa funda' e pula diretamente ao Nível 3",
+        "O pesquisa infere 3-4 sub-tópicos sem perguntar ao usuário",
+        "O pesquisa dispara perplexity_research em paralelo no primeiro turno",
+        "O pesquisa inclui CRAAP scores (0-100) por fonte no relatório final",
+        "O pesquisa inclui tabela de Status dos Fatos-Chave com ícones de verificação",
+        "O pesquisa inclui nível de confiança explícito (ALTO/MÉDIO/BAIXO)",
+        "O pesquisa salva o relatório como arquivo .md em ~/pesquisas/",
+        "O pesquisa-rapida NÃO detecta keyword e começa pelo Nível 1 com perplexity_search",
+        "O pesquisa-rapida usa Tier A/B/C/D genérico em vez de CRAAP scoring"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "/pesquisa-rapida suplementação de creatina para idosos — benefícios, riscos e dosagem recomendada",
+      "expected_output": "Tema de saúde com muitas fontes de qualidade duvidosa. O pesquisa deve aplicar CRAAP scoring com atenção especial ao critério Purpose (vender suplementos vs informar) e domain filters para pubmed/scholar. Fatos-chave como dosagem e contraindicações devem ser rastreados com ≥2 fontes. O pesquisa-rapida usa Tier genérico que não distingue loja de suplementos de paper peer-reviewed pelo critério Purpose.",
+      "files": [],
+      "expectations": [
+        "O relatório inclui CRAAP scores individuais para as fontes principais",
+        "Fontes de lojas de suplementos são penalizadas no critério Purpose do CRAAP",
+        "O relatório lista fatos-chave com status de verificação (confirmado/fonte única/conflito)",
+        "Domain hints para scholar ou pubmed são usados nas queries do Nível 3",
+        "Dosagem recomendada tem ≥2 fontes independentes citadas",
+        "Contradições entre fontes são identificadas com scores CRAAP de cada lado",
+        "Nível de confiança final é explícito e justificado pela verificação dos fatos"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "pesquisa rápida quanto custa o plano pro do cursor ide em 2025",
+      "expected_output": "O pesquisa deve detectar 'pesquisa rápida' e executar apenas Nível 1 (varredura com perplexity_search), entregar o resumo e encerrar sem perguntar se quer continuar. O pesquisa-rapida deve ignorar o keyword e seguir o funil padrão perguntando ao usuário se quer prosseguir pro Nível 2.",
+      "files": [],
+      "expectations": [
+        "O pesquisa detecta o keyword 'pesquisa rápida'",
+        "O pesquisa executa apenas Nível 1 (perplexity_search)",
+        "O pesquisa entrega o resumo e encerra sem AskUserQuestion",
+        "O pesquisa NÃO prossegue para Nível 2 ou 3",
+        "O pesquisa-rapida segue o funil padrão com AskUserQuestion após Nível 1",
+        "Ambos retornam o preço do plano Pro do Cursor IDE"
+      ]
+    }
+  ]
+}

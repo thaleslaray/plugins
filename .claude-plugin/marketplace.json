@@ -6,5 +6,17 @@
     "name": "Thales Laray",
     "url": "https://instagram.com/thaleslaray"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "pesquisa",
+      "description": "Pesquisa profunda em funil multi-nível com fontes verificadas",
+      "category": "produtividade",
+      "author": {
+        "name": "Thales Laray",
+        "url": "https://instagram.com/thaleslaray"
+      },
+      "source": "./plugins/pesquisa",
+      "homepage": "https://github.com/thaleslaray/plugins/tree/main/plugins/pesquisa"
+    }
+  ]
 }
