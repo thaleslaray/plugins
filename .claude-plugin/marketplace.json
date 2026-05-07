@@ -1,0 +1,10 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "thales-plugins",
+  "description": "Skills e MCPs do Thales Laray pra Claude Code",
+  "owner": {
+    "name": "Thales Laray",
+    "url": "https://instagram.com/thaleslaray"
+  },
+  "plugins": []
+}
