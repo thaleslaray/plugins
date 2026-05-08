@@ -113,7 +113,11 @@ Ao detectar a flag, avisar logo no início (antes do Nível 1):
 ### Como executar
 
 1. Decompor o tema em 3-5 ângulos complementares
-2. Rodar TODAS em paralelo no mesmo turno
+2. **CRITICAL — paralelismo obrigatório:** disparar TODAS as `perplexity_search` numa **única mensagem** (múltiplas tool_use em paralelo). NÃO chamar uma, esperar resposta, chamar próxima. Isso degrada a velocidade em 5×. Se você está pensando "vou chamar uma, ler resultado, ajustar", PARE — Nível 1 é varredura, não refinamento.
+
+   ❌ Errado: turn 1 chama search A, turn 2 chama search B, turn 3 chama search C
+   ✅ Certo: turn 1 chama search A + B + C (todas no mesmo bloco de tool calls)
+
 3. Usar `sources` estrategicamente: `web`, `scholar`, `social`
 
 ### Entrega do Nível 1
@@ -217,23 +221,34 @@ AskUserQuestion({
 **Ferramentas:** N × `perplexity_research` em paralelo + `firecrawl_scrape`
 **Velocidade:** ~60-90s (paralelo, não sequencial)
 
-### Passo 1 — Inferir domain filters (opcional)
+### Passo 1 — Domain filters (OBRIGATÓRIO pra temas com fontes acadêmicas óbvias)
 
-Antes de disparar as queries, avaliar se o tema tem domínios de alta confiabilidade óbvios. Se sim, incluir nas queries para priorizar resultados:
+**Regra:** se o tema cai numa das categorias abaixo, é OBRIGATÓRIO incluir os domain hints nas queries. Sem isso, Perplexity pega blogs comerciais e a qualidade despenca. Não é "opcional" — é diferença entre Tier A vs Tier C.
 
-| Tipo de tema | Domain hints para queries |
-|--------------|--------------------------|
-| Tecnologia/frameworks | `site:github.com OR site:arxiv.org OR site:docs.[framework].com` |
-| Mercado/business | `site:statista.com OR site:reports.[org].com` |
-| Saúde/medicina | `site:pubmed.ncbi.nlm.nih.gov OR site:who.int` |
-| Regulação/legal | `site:gov.br OR site:legisweb.com.br` |
-| Geral | Não filtrar — deixar o Perplexity decidir |
+| Tipo de tema | Domain hints (incluir literal na query) | Obrigatório? |
+|--------------|----------------------------------------|--------------|
+| Saúde/medicina/farmacologia | `site:pubmed.ncbi.nlm.nih.gov OR site:who.int OR site:scholar.google.com` | **SIM** |
+| Tecnologia/frameworks/papers | `site:github.com OR site:arxiv.org OR site:docs.[framework].com` | **SIM** se houver doc oficial |
+| Mercado/business | `site:statista.com OR site:reports.[org].com` | Recomendado |
+| Regulação/legal Brasil | `site:gov.br OR site:legisweb.com.br` | **SIM** pra tema BR |
+| Geral | Sem hints — deixar Perplexity decidir | — |
 
-Incorporar domain hints nas queries do `perplexity_research` quando relevante.
+**Como aplicar:** anexar ao final de cada query do `perplexity_research`. Exemplo:
+```
+"creatina monohidratada idosos sarcopenia dosagem segurança 2024 2025 site:pubmed.ncbi.nlm.nih.gov OR site:scholar.google.com"
+```
 
-### Passo 2 — Disparar em paralelo
+Se você não incluiu hints num tema obrigatório, **a auditoria detecta** e marca como falha — então não pula.
 
-Para cada sub-tópico aprovado, criar uma query específica. Disparar TODAS no mesmo turno:
+### Passo 2 — Disparar em paralelo (CRITICAL)
+
+Para cada sub-tópico aprovado, criar uma query específica. **Disparar TODAS no mesmo turno = mesma mensagem com múltiplos tool_use blocks.**
+
+⚠️ **Erro mais comum:** chamar `perplexity_research(A)`, esperar, ler, chamar `perplexity_research(B)`, esperar... Isso é **sequencial** e a skill perde 60-90% do ganho de velocidade. Quando isso acontece, o user paga 3× mais tempo de espera por nada.
+
+✅ **Forma certa:** uma mensagem do assistant com 3 tool_use blocks (A, B, C). Todos disparam no mesmo wallclock. Aí você espera **uma vez** e recebe os 3 resultados juntos.
+
+Validação rápida: se você está vendo seus próprios outputs intermediários "Pesquisei A, agora vou B" — você quebrou o paralelismo.
 
 ```
 perplexity_research("[sub-tópico A] análise completa 2025 dados concretos [domain hints]")
