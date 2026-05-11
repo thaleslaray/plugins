@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "hotmart": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/thaleslaray/hotmart-mcp.git",
+        "hotmart-mcp"
+      ]
+    }
+  }
+}

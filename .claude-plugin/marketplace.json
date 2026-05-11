@@ -17,6 +17,17 @@
       },
       "source": "./plugins/pesquisa",
       "homepage": "https://github.com/thaleslaray/plugins/tree/main/plugins/pesquisa"
+    },
+    {
+      "name": "hotmart",
+      "description": "Hotmart API MCP server — sales, subscriptions, club, products, coupons, tickets, and negotiation, auto-generated from the official OpenAPI spec",
+      "category": "ecommerce",
+      "author": {
+        "name": "Thales Laray",
+        "url": "https://instagram.com/thaleslaray"
+      },
+      "source": "./plugins/hotmart",
+      "homepage": "https://github.com/thaleslaray/plugins/tree/main/plugins/hotmart"
     }
   ]
 }
