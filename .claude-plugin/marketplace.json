@@ -28,6 +28,17 @@
       },
       "source": "./plugins/hotmart",
       "homepage": "https://github.com/thaleslaray/plugins/tree/main/plugins/hotmart"
+    },
+    {
+      "name": "clint",
+      "description": "MCP server for the Clint CRM API (Brazilian) — 46 endpoints, FastMCP + Code Mode",
+      "category": "sales",
+      "author": {
+        "name": "Thales Laray",
+        "url": "https://instagram.com/thaleslaray"
+      },
+      "source": "./plugins/clint",
+      "homepage": "https://github.com/thaleslaray/plugins/tree/main/plugins/clint"
     }
   ]
 }

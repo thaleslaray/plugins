@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "clint": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/thaleslaray/clint-mcp.git@v0.1.0",
+        "clint-mcp"
+      ]
+    }
+  }
+}
