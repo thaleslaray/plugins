@@ -4,7 +4,7 @@
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/thaleslaray/hotmart-mcp.git@v0.2.3",
+        "git+https://github.com/thaleslaray/hotmart-mcp.git@v0.3.0",
         "hotmart-mcp"
       ]
     }
