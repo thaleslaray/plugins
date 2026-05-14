@@ -32,16 +32,14 @@ Pra MCPs, depois do install rode `/<nome>:configure` pra entrar com as credencia
 ### Atualizar
 
 ```
-/plugin update <nome>
-```
-
-Pra MCPs, depois do update limpa o cache do uvx pra pegar o código novo:
-
-```bash
-rm -rf ~/.cache/uv/git-v0/checkouts/*<nome>*
+/plugin marketplace update thales-plugins   # atualiza cache do marketplace (importante!)
+/plugin update <nome>                        # baixa versão nova
+/reload-plugins                              # recarrega
 ```
 
 E reinicia o Claude Code.
+
+⚠️ O `/plugin marketplace update` é importante — sem ele o Claude usa cache local desatualizado e não vê versão nova. Os MCPs agora vêm com versão pinada no `.mcp.json` (ex: `@v0.2.3`), então o uvx invalida cache sozinho.
 
 ## Padrão técnico
 
