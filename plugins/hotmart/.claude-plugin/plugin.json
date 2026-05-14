@@ -1,6 +1,6 @@
 {
   "name": "hotmart",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Hotmart API MCP server — sales, subscriptions, club, products, coupons, tickets, and negotiation, auto-generated from the official OpenAPI spec",
   "author": {
     "name": "Thales Laray",
