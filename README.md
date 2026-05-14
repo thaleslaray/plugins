@@ -17,7 +17,7 @@ Pra MCPs, depois do install rode `/<nome>:configure` pra entrar com as credencia
 
 | Plugin | Tipo | Categoria | Versão | Descrição |
 |---|---|---|---|---|
-| [`hotmart`](./plugins/hotmart) | MCP | ecommerce | 0.2.2 | Hotmart API MCP server — sales, subscriptions, club, products, coupons, tickets, and negotiation, auto-generated from the official OpenAPI spec Source: [`hotmart-mcp`](https://github.com/thaleslaray/hotmart-mcp). |
+| [`hotmart`](./plugins/hotmart) | MCP | ecommerce | 0.2.3 | Hotmart API MCP server — sales, subscriptions, club, products, coupons, tickets, and negotiation, auto-generated from the official OpenAPI spec Source: [`hotmart-mcp`](https://github.com/thaleslaray/hotmart-mcp). |
 | [`pesquisa`](./plugins/pesquisa) | Skill | produtividade | 0.1.0 | Pesquisa profunda em funil multi-nível com fontes verificadas |
 
 <!-- PLUGINS_TABLE_END -->
