@@ -31,25 +31,25 @@ Pra MCPs, depois do install rode `/<nome>:configure` pra entrar com as credencia
 
 ### Atualizar
 
-1. Atualiza o catálogo do marketplace:
-   ```
-   /plugin marketplace update thales-plugins
-   ```
+**Recomendado — habilita auto-update uma vez:**
 
-2. Atualiza o plugin pela UI:
-   ```
-   /plugin
-   ```
-   Aba **Installed** → acha o plugin → clica em **Update**.
+1. `/plugin` → aba **Marketplaces** → seleciona `thales-plugins`
+2. Clica **Enable auto-update**
 
-3. Recarrega:
-   ```
-   /reload-plugins
-   ```
+Daí pra frente, todo startup do Claude Code atualiza automaticamente os plugins. Quando atualizar, ele te avisa pra rodar `/reload-plugins`.
+
+**Manual — pra atualizar agora:**
+
+```
+/plugin marketplace update thales-plugins
+/plugin uninstall <nome>@thales-plugins
+/plugin install <nome>@thales-plugins
+/reload-plugins
+```
 
 E reinicia o Claude Code.
 
-> 💡 A UI sempre funciona. Comando direto `/plugin update <nome>` tem comportamento que varia entre versões do Claude Code — pela UI evita confusão.
+> 💡 **`/plugin update` não existe** como comando do Claude Code (confirmado na [doc oficial Anthropic](https://code.claude.com/docs/en/discover-plugins)). Pra atualizar manualmente é via uninstall+install, ou habilitando auto-update na UI.
 
 Os MCPs vêm com versão pinada no `.mcp.json` (ex: `@v0.2.3`), então o uvx invalida cache sozinho — sem precisar `rm -rf` manual.
 
