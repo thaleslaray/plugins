@@ -17,8 +17,8 @@ Pra MCPs, depois do install rode `/<nome>:configure` pra entrar com as credencia
 
 | Plugin | Tipo | Categoria | Versão | Descrição |
 |---|---|---|---|---|
-| [`clint`](./plugins/clint) | MCP | sales | 0.2.0 | MCP server for the Clint CRM API (Brazilian) — 46 endpoints, FastMCP + Code Mode Source: [`clint-mcp`](https://github.com/thaleslaray/clint-mcp). |
-| [`hotmart`](./plugins/hotmart) | MCP | ecommerce | 0.3.1 | Hotmart API MCP server — sales, subscriptions, club, products, coupons, tickets, and negotiation, auto-generated from the official OpenAPI spec Source: [`hotmart-mcp`](https://github.com/thaleslaray/hotmart-mcp). |
+| [`clint`](./plugins/clint) | MCP | sales | 0.3.0 | MCP server for the Clint CRM API (Brazilian) — 46 endpoints, FastMCP + Code Mode Source: [`clint-mcp`](https://github.com/thaleslaray/clint-mcp). |
+| [`hotmart`](./plugins/hotmart) | MCP | ecommerce | 0.4.1 | Hotmart API MCP server — sales, subscriptions, club, products, coupons, tickets, and negotiation, auto-generated from the official OpenAPI spec Source: [`hotmart-mcp`](https://github.com/thaleslaray/hotmart-mcp). |
 | [`pesquisa`](./plugins/pesquisa) | Skill | produtividade | 0.1.0 | Pesquisa profunda em funil multi-nível com fontes verificadas |
 
 <!-- PLUGINS_TABLE_END -->
